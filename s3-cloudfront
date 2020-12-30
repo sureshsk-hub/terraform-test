@@ -4,7 +4,7 @@ provider "aws" {
 
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = "awsbucket122332"
+  bucket = "awstesting1221"
   acl    = "public"
 
 module "cloudfront_s3_website_with_domain" {

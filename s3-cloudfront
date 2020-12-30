@@ -1,0 +1,19 @@
+provider "aws" {
+  region = "us-west-2"
+}
+
+
+resource "aws_s3_bucket" "bucket" {
+  bucket = "awsbucket122332"
+  acl    = "public"
+
+module "cloudfront_s3_website_with_domain" {
+    source                 = "chgangaraju/cloudfront-s3-website/aws"
+    version                = "1.2.2"
+    hosted_zone            = "Z0258893ONN13ZO5KGR"
+    domain_name            = "testsite.co"
+    acm_certificate_domain = "*.testsite.co"
+    upload_sample_file     = true
+}
+
+
